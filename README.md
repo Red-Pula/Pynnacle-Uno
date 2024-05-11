@@ -1,6 +1,6 @@
 # Introduction
 
-The **pynnacle-uno** module was initially crafted to cater to readers of the acclaimed book **_'Bot Adventures: Discovering the Mysteries of Robotics'_** authored by Team Pinnacle. This module, built upon the robust foundation of [Pymata4](https://github.com/MrYsLab/pymata4/) by Alan Yorinks. It is aimed at providing novice enthusiasts with a hands-on robotics coding experience in Python that closely mirrors the structure and functionality of Arduino's programming language. The primary objective behind its creation is to facilitate a smoother transition for learners as they delve into the intricacies of Arduino's programming language, which is renowned for its steep learning curve compared to Python.
+The **pynnacle-uno** module was initially crafted to cater to readers of the acclaimed book **_'Bot Adventures: Discovering the Mysteries of Robotics'_** authored by Team Pinnacle. This module was built on top of the robust foundation of [Pymata4](https://github.com/MrYsLab/pymata4/) by Alan Yorinks. It is aimed at providing novice enthusiasts with a hands-on robotics coding experience in Python that closely mirrors the structure and functionality of Arduino's programming language. The primary objective behind its creation is to facilitate a smoother transition for learners as they delve into the intricacies of Arduino's programming language, which is renowned for its steep learning curve compared to Python.
 
 # Compatibility and Recommendations
 
