@@ -15,3 +15,7 @@
 
 
 from .main import *
+
+__version__ = "1.0.0"
+__authors__ = "Rafael Red Angelo M. Hizon, Jenel M. Justo, and Serena Mae C.S. Lee"
+__credits__ = "Team Pinnacle"
