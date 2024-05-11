@@ -65,7 +65,7 @@ A4 = 'A4'
 A5 = 'A5'
 
 # Notes and their corresponding frequencies
-# reference: https://docs.arduino.cc/built-in-examples/digital/toneMelody/
+# reference: <https://docs.arduino.cc/built-in-examples/digital/toneMelody/>
 NOTE_B0 = 31
 NOTE_C1 = 33
 NOTE_CS1 = 35
@@ -226,8 +226,8 @@ def pinMode(pin, mode):
     # Else if pin starts with an 'A', then it must be an analog pin.
     # Analog pins are usually used for analog inputs, but they can also be used as digital pins for input and output devices.
     # See more at:
-    # 1. https://docs.arduino.cc/learn/microcontrollers/analog-input/
-    # 2. https://mryslab.github.io/pymata4/pin_modes/#set_pin_mode_analog_input
+    # 1. <https://docs.arduino.cc/learn/microcontrollers/analog-input/>
+    # 2. <https://mryslab.github.io/pymata4/pin_modes/#set_pin_mode_analog_input>
     elif pin.startswith('A'):
         integer_only = int(pin[1:])
         if mode == INPUT:
@@ -280,7 +280,7 @@ def digitalWrite(pin, state):
 # In Arduino, the analogWrite function does not require the programmer to
 # invoke pinMode in order to set the pin as OUTPUT. We simulate this effect
 # using the set_pin_mode_pwm_output method before calling pwm_write.
-# See more at: https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/
+# See more at: <https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/>
 def analogWrite(pin, val):
     if isinstance(pin, str) and pin.startswith('A'):
         pin = analogToDigital(pin)  # convert analog pin to digital pin equivalent
@@ -293,7 +293,7 @@ def analogWrite(pin, val):
 # It returns a list with two values:
 #   1. last value change
 #   2. time_stamp
-# See more at: https://mryslab.github.io/pymata4/pin_changes/#digital_read
+# See more at: <https://mryslab.github.io/pymata4/pin_changes/#digital_read>
 def digitalRead(pin):
     if isinstance(pin, str) and pin.startswith('A'):
         pin = analogToDigital(pin)  # convert analog pin to digital pin equivalent
@@ -307,7 +307,7 @@ def digitalRead(pin):
 # It returns a list with two values:
 #   1. last value change
 #   2. time_stamp
-# See more at: https://mryslab.github.io/pymata4/pin_changes/#analog_read
+# See more at: <https://mryslab.github.io/pymata4/pin_changes/#analog_read>
 def analogRead(pin):
     if isinstance(pin, str) and pin.startswith('A'):
         pin = int(pin[1:])
@@ -319,7 +319,7 @@ def analogRead(pin):
 # This accepts 2 parameters:
 #   1. trigger_pin
 #   2. echo_pin
-# See more at: https://mryslab.github.io/pymata4/pin_modes/#set_pin_mode_sonar
+# See more at: <https://mryslab.github.io/pymata4/pin_modes/#set_pin_mode_sonar>
 # This function is not part of the original programming language of Arduino.
 # It is added here for educational purposes in line with the authors' book.
 def ultrasonicAttach(trigger_pin, echo_pin):
@@ -331,7 +331,7 @@ def ultrasonicAttach(trigger_pin, echo_pin):
 # This returns a list with 2 values:
 #   1. last value
 #   2. raw time_stamp
-# See more at: https://mryslab.github.io/pymata4/pin_changes/#sonar_read
+# See more at: <https://mryslab.github.io/pymata4/pin_changes/#sonar_read>
 # This function is not part of the original programming language of Arduino.
 # It is added here for educational purposes in line with the authors' book.
 def ultrasonicRead(trigger_pin):
@@ -345,8 +345,8 @@ def ultrasonicRead(trigger_pin):
 #   2. min pulse width in ms. (if no value was passed, value is 544)
 #   3. max pulse width in ms. (if no value was passed, value is 2400)
 # See more at:
-#   1. https://www.arduino.cc/reference/en/libraries/servo/attach/
-#   2. https://mryslab.github.io/pymata4/pin_modes/#set_pin_mode_servo
+#   1. <https://www.arduino.cc/reference/en/libraries/servo/attach/>
+#   2. <https://mryslab.github.io/pymata4/pin_modes/#set_pin_mode_servo>
 def servoAttach(pin, min_pulse=544, max_pulse=2400):
     _board.set_pin_mode_servo(pin)
 
@@ -356,15 +356,15 @@ def servoAttach(pin, min_pulse=544, max_pulse=2400):
 #   1. pin of the buzzer
 #   2. frequency
 # See more at:
-#   1. https://www.arduino.cc/reference/en/libraries/servo/write/
-#   2. https://mryslab.github.io/pymata4/device_writes/#servo_write
+#   1. <https://www.arduino.cc/reference/en/libraries/servo/write/>
+#   2. <https://mryslab.github.io/pymata4/device_writes/#servo_write>
 def servoWrite(pin, position):
     _board.servo_write(pin, position)
 
 
 # This function accepts a pin as a parameter.
 # That pin will then be set for tone operations.
-# See more at: https://mryslab.github.io/pymata4/pin_modes/#set_pin_mode_tone
+# See more at: <https://mryslab.github.io/pymata4/pin_modes/#set_pin_mode_tone>
 # This function is not part of the original programming language of Arduino.
 # It is added here for educational purposes in line with the authors' book.
 def buzzerAttach(pin):
@@ -377,8 +377,8 @@ def buzzerAttach(pin):
 #   2. frequency
 #   3. duration (if no value was passed, tone will be played continuously)
 # See more at:
-#   1. https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/
-#   2. https://mryslab.github.io/pymata4/device_writes/#play_tone
+#   1. <https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/>
+#   2. <https://mryslab.github.io/pymata4/device_writes/#play_tone>
 def tone(pin, frequency, duration=None):
     if duration is None:
         _board.play_tone_continuously(pin, frequency)
