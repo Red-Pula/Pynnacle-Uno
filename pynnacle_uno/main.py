@@ -1,5 +1,5 @@
 '''
-    The pynnacle_uno provides an Arduino-like programming experience in Python for beginners (see full description below).
+    The Pynnacle-Uno provides an Arduino-like programming experience in Python for beginners (see full description below).
 
     Copyright (C) 2024 Rafael Red Angelo M. Hizon, Jenel M. Justo, and Serena Mae C.S. Lee
 
