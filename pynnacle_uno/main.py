@@ -178,7 +178,7 @@ class _Style:
             f"Its main goal is easing the transition for learners, bridging the gap between Python's simplicity\n"
             f"and Arduino's complexity, known for its steep learning curve.\n\n"
             f"{_Style.__ITALIC}This work requires attribution if you modify and distribute it and its derivatives.\nYou can find the attribution requirement towards the end of the license document.{_Style.__RESET}\n\n"
-            f"{_Style.__COLOR_BLUE}{_Style.__BOLD}Copyright (c) 2024 {_Style.__RESET} {_Style.__COLOR_BLUE}{_Style.__UNDERLINE}Rafael Red Angelo M. Hizon{_Style.__RESET}, {_Style.__COLOR_BLUE}{_Style.__UNDERLINE}Jenel M. Justo{_Style.__RESET}, {_Style.__COLOR_BLUE}{_Style.__UNDERLINE}Serena Mae C.S. Lee\n{_Style.__RESET}"
+            f"{_Style.__COLOR_BLUE}{_Style.__BOLD}Copyright (c) 2024 {_Style.__RESET}{_Style.__COLOR_BLUE}{_Style.__UNDERLINE}Rafael Red Angelo M. Hizon{_Style.__RESET}, {_Style.__COLOR_BLUE}{_Style.__UNDERLINE}Jenel M. Justo{_Style.__RESET}, {_Style.__COLOR_BLUE}{_Style.__UNDERLINE}Serena Mae C.S. Lee\n{_Style.__RESET}"
         )
         print(formatted_text)
 
