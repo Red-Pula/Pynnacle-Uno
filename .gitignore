@@ -22,3 +22,8 @@ ENV/
 .venv/
 pipenv/
 pipenv.lock
+
+# Others
+build/
+dist/
+pynnacle_uno.egg-info/
