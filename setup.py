@@ -5,11 +5,11 @@ with open("README.md", "r") as f:
 
 setup(
     name='pynnacle_uno',
-    version='0.1.1',
+    version='1.0.0', 
     packages=find_packages(),
     description='A Python module that provides hands-on robotics coding experience in Python that closely mirrors the structure and functionality of Arduino\'s programming language.',
     url='https://github.com/Red-Pula/Pynnacle-Uno',
-    author='Red Hizon, Jenel Justo, Serena Lee',
+    author='Rafael Red Angelo M. Hizon, Jenel M. Justo, Serena Mae C.S. Lee',
     author_email='redhizon@gmail.com, jenel.just88@gmail.com, nmae.lee@gmail.com',
     license='GNU Affero General Public License',
     install_requires=['pymata4>=1.15'],
