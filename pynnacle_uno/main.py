@@ -171,7 +171,7 @@ class _Style:
     def info():
         print("\n")
         formatted_text = (
-            f"\n{_Style.__COLOR_BLUE}{_Style.__BOLD}THE PYNNACLE_UNO{_Style.__RESET}\n\n"
+            f"\n{_Style.__COLOR_BLUE}{_Style.__BOLD}THE PYNNACLE-UNO{_Style.__RESET}\n\n"
             f"This module is tailored for beginners in robotics and programming,\n"
             f'originally for readers of "{_Style.__COLOR_BLUE}{_Style.__ITALIC}Bot Adventures: Discovering the Mysteries of Robotics{_Style.__RESET}" by {_Style.__BOLD}{_Style.__COLOR_BLUE}Team Pinnacle{_Style.__RESET}.\n'
             f"Based on {_Style.__ITALIC}Pymata4{_Style.__RESET}, it offers a Python-based robotics coding experience resembling Arduino's language.\n"
