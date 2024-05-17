@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setup(
     name='pynnacle_uno',
-    version='1.0.0', 
+    version='1.0.1', 
     packages=find_packages(),
     description='A Python module that provides hands-on robotics coding experience in Python that closely mirrors the structure and functionality of Arduino\'s programming language.',
     url='https://github.com/Red-Pula/Pynnacle-Uno',
