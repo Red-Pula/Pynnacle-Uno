@@ -384,7 +384,7 @@ def tone(pin, frequency, duration=None):
     if duration is None:
         _board.play_tone_continuously(pin, frequency)
     else:
-        _board.play_tone(pin, frequency, duration)
+        _board.play_tone(pin, frequency, int(duration))
 
 
 # This function accepts a pin as a parameter.
