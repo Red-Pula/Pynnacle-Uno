@@ -291,28 +291,24 @@ def analogWrite(pin, val):
 
 # This function accepts a pin as a parameter.
 # This function allows to read a digital pin's state whether HIGH or LOW.
-# It returns a list with two values:
-#   1. last value change
-#   2. time_stamp
+# This returns the last digital value change.
 # See more at: <https://mryslab.github.io/pymata4/pin_changes/#digital_read>
 def digitalRead(pin):
     if isinstance(pin, str) and pin.startswith('A'):
         pin = analogToDigital(pin)  # convert analog pin to digital pin equivalent
         _board.set_pin_mode_digital_input(pin)  # set the pin's mode as a digital input pin
-    val = _board.digital_read(pin)  # read the digital value
+    val = _board.digital_read(pin)[0]  # store the digital reading
     return val
 
 
 # This function accepts a pin as a parameter.
 # This function allows to read the value from an analog pin.
-# It returns a list with two values:
-#   1. last value change
-#   2. time_stamp
+# This returns the last analog value change.
 # See more at: <https://mryslab.github.io/pymata4/pin_changes/#analog_read>
 def analogRead(pin):
     if isinstance(pin, str) and pin.startswith('A'):
         pin = int(pin[1:])
-    val = _board.analog_read(pin)  # read the analog value
+    val = _board.analog_read(pin)[0]  # store the analog reading
     return val
 
 
@@ -329,14 +325,12 @@ def ultrasonicAttach(trigger_pin, echo_pin):
 
 # This function accepts a trigger_pin as a parameter.
 # This function retrieves ping data from the ultrasonic (HC-SR04 type).
-# This returns a list with 2 values:
-#   1. last value
-#   2. raw time_stamp
+# This returns the last read value.
 # See more at: <https://mryslab.github.io/pymata4/pin_changes/#sonar_read>
 # This function is not part of the original programming language of Arduino.
 # It is added here for educational purposes in line with the authors' book.
 def ultrasonicRead(trigger_pin):
-    val = _board.sonar_read(trigger_pin)
+    val = _board.sonar_read(trigger_pin)[0] # store the ultrasonic sensor's reading
     return val
 
 
