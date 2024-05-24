@@ -258,7 +258,7 @@ def delay(ms):
 # This function accepts a pin as a parameter.
 # This function converts the analog pin to its digital pin equivalent.
 # It returns the calculated digital pin equivalent.
-def analogToDigital(pin):
+def _analogToDigital(pin):
     integer_only = int(pin[1:])
     pin = DIGITAL_PINS_COUNT + integer_only
     return pin
@@ -270,7 +270,7 @@ def analogToDigital(pin):
 #   2. state (HIGH or LOW)
 def digitalWrite(pin, state):
     if isinstance(pin, str) and pin.startswith('A'):
-        pin = analogToDigital(pin)  # convert analog pin to digital pin equivalent
+        pin = _analogToDigital(pin)  # convert analog pin to digital pin equivalent
     _board.digital_write(pin, state)
 
 
@@ -284,7 +284,7 @@ def digitalWrite(pin, state):
 # See more at: <https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/>
 def analogWrite(pin, val):
     if isinstance(pin, str) and pin.startswith('A'):
-        pin = analogToDigital(pin)  # convert analog pin to digital pin equivalent
+        pin = _analogToDigital(pin)  # convert analog pin to digital pin equivalent
     _board.set_pin_mode_pwm_output(pin)  # set the pin's mode as a pwm output pin
     _board.pwm_write(pin, val)  # write an output value
 
@@ -295,7 +295,7 @@ def analogWrite(pin, val):
 # See more at: <https://mryslab.github.io/pymata4/pin_changes/#digital_read>
 def digitalRead(pin):
     if isinstance(pin, str) and pin.startswith('A'):
-        pin = analogToDigital(pin)  # convert analog pin to digital pin equivalent
+        pin = _analogToDigital(pin)  # convert analog pin to digital pin equivalent
         _board.set_pin_mode_digital_input(pin)  # set the pin's mode as a digital input pin
     val = _board.digital_read(pin)[0]  # store the digital reading
     return val
