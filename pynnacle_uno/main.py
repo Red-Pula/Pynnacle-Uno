@@ -57,7 +57,7 @@ INPUT = 'I'
 INPUT_PULLUP = 'IP'
 
 # Maximum number of digital pins on the Arduino UNO
-DIGITAL_PINS_COUNT = 14
+_DIGITAL_PINS_COUNT = 14
 
 # Analog Pins on Arduino UNO. Add more if you want to 
 A0 = 'A0'
@@ -208,6 +208,13 @@ except:
     _Style.print_error_message()
 
 
+# This function accepts a pin as a parameter.
+# This function converts the analog pin to its digital pin equivalent.
+# It returns the calculated digital pin equivalent.
+def _analogToDigital(pin):
+    integer_only = int(pin[1:])
+    pin = _DIGITAL_PINS_COUNT + integer_only
+    return pin
 
 
 # In Arduino's pinMode function, there are only 3 modes:
@@ -238,7 +245,7 @@ def pinMode(pin, mode):
             _board.set_pin_mode_analog_input(integer_only)
 
         else:
-            digital_pin_equivalent = DIGITAL_PINS_COUNT + integer_only
+            digital_pin_equivalent = _analogToDigital(pin)
             if mode == OUTPUT:
                 _board.set_pin_mode_digital_output(digital_pin_equivalent)
 
@@ -256,15 +263,6 @@ def pinMode(pin, mode):
 # It is implemented here using the sleep method.
 def delay(ms):
     sleep(ms / 1000)  # The sleep method takes a delay time in seconds so we divide by 1000.
-
-
-# This function accepts a pin as a parameter.
-# This function converts the analog pin to its digital pin equivalent.
-# It returns the calculated digital pin equivalent.
-def _analogToDigital(pin):
-    integer_only = int(pin[1:])
-    pin = DIGITAL_PINS_COUNT + integer_only
-    return pin
 
 
 # This function sets (writes) a digital pin's state into HIGH or LOW.
