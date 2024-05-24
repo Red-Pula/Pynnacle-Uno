@@ -44,6 +44,9 @@ import re
 
 # CONSTANTS
 
+# Delay in ms before performing a write operation
+DELAY_WRITE = 10
+
 # States
 HIGH = 1
 LOW = 0
@@ -269,6 +272,7 @@ def _analogToDigital(pin):
 #   1. pin
 #   2. state (HIGH or LOW)
 def digitalWrite(pin, state):
+    delay(DELAY_WRITE)
     if isinstance(pin, str) and pin.startswith('A'):
         pin = _analogToDigital(pin)  # convert analog pin to digital pin equivalent
     _board.digital_write(pin, state)
@@ -283,6 +287,7 @@ def digitalWrite(pin, state):
 # using the set_pin_mode_pwm_output method before calling pwm_write.
 # See more at: <https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/>
 def analogWrite(pin, val):
+    delay(DELAY_WRITE)
     if isinstance(pin, str) and pin.startswith('A'):
         pin = _analogToDigital(pin)  # convert analog pin to digital pin equivalent
     _board.set_pin_mode_pwm_output(pin)  # set the pin's mode as a pwm output pin
@@ -354,6 +359,7 @@ def servoAttach(pin, min_pulse=544, max_pulse=2400):
 #   1. <https://www.arduino.cc/reference/en/libraries/servo/write/>
 #   2. <https://mryslab.github.io/pymata4/device_writes/#servo_write>
 def servoWrite(pin, position):
+    delay(DELAY_WRITE)
     _board.servo_write(pin, position)
 
 
