@@ -389,3 +389,21 @@ def tone(pin, frequency, duration=None):
 # This function turns off the tone being played on the pin that was passed as a parameter.
 def noTone(pin):
     _board.play_tone_off(pin)
+
+
+# This function is for mapping a range of values to target range.
+# Example: Mapping potentiometer inputs to the standard servo's range (0-180).
+# This accepts 5 parameters:
+#   1. input value
+#   2. minimum possible input value
+#   3. maximum possible input value
+#   4. minimum output value of the target range
+#   5. maximum output value of the target range
+def mapValues(value_input, min_input, max_input, min_output, max_output):
+    # Normalize the input value
+    normalized_value = (value_input - min_input) / (max_input - min_input)
+    
+    # Scale to the output range
+    mapped_value = normalized_value * (max_output - min_output) + min_output
+    
+    return mapped_value
