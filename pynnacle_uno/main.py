@@ -358,7 +358,7 @@ def servoAttach(pin, min_pulse=544, max_pulse=2400):
 #   2. <https://mryslab.github.io/pymata4/device_writes/#servo_write>
 def servoWrite(pin, position):
     delay(DELAY_WRITE)
-    _board.servo_write(pin, position)
+    _board.servo_write(pin, int(position))
 
 
 # This function accepts a pin as a parameter.
@@ -406,4 +406,4 @@ def mapValues(value_input, min_input, max_input, min_output, max_output):
     # Scale to the output range
     mapped_value = normalized_value * (max_output - min_output) + min_output
     
-    return mapped_value
+    return int(mapped_value)
